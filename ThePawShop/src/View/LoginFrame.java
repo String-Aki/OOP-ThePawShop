@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
+import Model.LoginM;
+import Controller.LoginC;
 
 /**
  *
@@ -38,12 +40,13 @@ public class LoginFrame extends javax.swing.JFrame {
         TitleLogo = new javax.swing.JLabel();
         PassLabel = new javax.swing.JLabel();
         UserLabel = new javax.swing.JLabel();
-        Login = new javax.swing.JButton();
         VIewPass = new javax.swing.JToggleButton();
+        BLogin = new javax.swing.JButton();
+        ForgotPass = new javax.swing.JLabel();
+        Register = new javax.swing.JLabel();
         bgIMG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
 
         bgPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -64,9 +67,7 @@ public class LoginFrame extends javax.swing.JFrame {
         UsernamePanel.setPreferredSize(new java.awt.Dimension(71, 22));
 
         UserIcon.setBackground(new java.awt.Color(255, 255, 255));
-        UserIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/userHQ.png"))); // NOI18N
-        UserIcon.setMaximumSize(new java.awt.Dimension(37, 37));
-        UserIcon.setMinimumSize(new java.awt.Dimension(37, 37));
+        UserIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/user.png"))); // NOI18N
         UserIcon.setPreferredSize(new java.awt.Dimension(50, 50));
 
         UsernameField.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -102,11 +103,16 @@ public class LoginFrame extends javax.swing.JFrame {
         PasswordPanel.setPreferredSize(new java.awt.Dimension(71, 22));
 
         PassIcon.setBackground(new java.awt.Color(255, 255, 255));
-        PassIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/lockHQ1.png"))); // NOI18N
+        PassIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/lock.png"))); // NOI18N
         PassIcon.setPreferredSize(new java.awt.Dimension(50, 50));
 
         PassField.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         PassField.setSelectionColor(new java.awt.Color(204, 204, 204));
+        PassField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PassFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PasswordPanelLayout = new javax.swing.GroupLayout(PasswordPanel);
         PasswordPanel.setLayout(PasswordPanelLayout);
@@ -130,7 +136,6 @@ public class LoginFrame extends javax.swing.JFrame {
         TitleLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/pet-supplies (2).png"))); // NOI18N
         TitleLogo.setMinimumSize(new java.awt.Dimension(0, 0));
         TitleLogo.setName(""); // NOI18N
-        TitleLogo.setPreferredSize(new java.awt.Dimension(64, 64));
         LoginBox.add(TitleLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 28, -1, -1));
 
         PassLabel.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
@@ -140,21 +145,6 @@ public class LoginFrame extends javax.swing.JFrame {
         UserLabel.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
         UserLabel.setText("Username");
         LoginBox.add(UserLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
-
-        Login.setBackground(new java.awt.Color(0, 102, 102));
-        Login.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
-        Login.setForeground(new java.awt.Color(255, 255, 255));
-        Login.setText("Login");
-        Login.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 1, true));
-        Login.setBorderPainted(false);
-        Login.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Login.setOpaque(false);
-        Login.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginActionPerformed(evt);
-            }
-        });
-        LoginBox.add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 60, 30));
 
         VIewPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/eye-crossedW.png"))); // NOI18N
         VIewPass.setBorder(null);
@@ -167,27 +157,68 @@ public class LoginFrame extends javax.swing.JFrame {
         });
         LoginBox.add(VIewPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 245, -1, -1));
 
-        bgPanel.add(LoginBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 135, 450, 365));
+        BLogin.setBackground(new java.awt.Color(0, 102, 102));
+        BLogin.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        BLogin.setForeground(new java.awt.Color(255, 255, 255));
+        BLogin.setText("Login");
+        BLogin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 1, true));
+        BLogin.setBorderPainted(false);
+        BLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BLoginActionPerformed(evt);
+            }
+        });
+        LoginBox.add(BLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 60, 30));
 
+        ForgotPass.setFont(new java.awt.Font("Arial", 3, 13)); // NOI18N
+        ForgotPass.setForeground(new java.awt.Color(0, 102, 102));
+        ForgotPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ForgotPass.setText("Forgot?");
+        ForgotPass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ForgotPass.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ForgotPass.setVisible(false);
+        LoginBox.add(ForgotPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 60, -1));
+
+        Register.setFont(new java.awt.Font("Arial", 3, 13)); // NOI18N
+        Register.setForeground(new java.awt.Color(153, 153, 153));
+        Register.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Register.setText("Register");
+        Register.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Register.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Register.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RegMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                RegMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                RegMouseExited(evt);
+            }
+        });
+        LoginBox.add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 112, 60, -1));
+
+        bgPanel.add(LoginBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 160, 450, 365));
+
+        bgIMG.setForeground(new java.awt.Color(204, 204, 204));
         bgIMG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/gradient.png"))); // NOI18N
         bgIMG.setText("jLabel1");
+        bgIMG.setFocusable(false);
         bgIMG.setMinimumSize(new java.awt.Dimension(0, 0));
         bgIMG.setPreferredSize(new java.awt.Dimension(1280, 720));
-        bgPanel.add(bgIMG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+        bgPanel.add(bgIMG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 760));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(bgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(bgPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1290, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(bgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(bgPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
         );
 
         pack();
@@ -195,16 +226,42 @@ public class LoginFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameFieldActionPerformed
 
-    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LoginActionPerformed
+        
+    }//GEN-LAST:event_UsernameFieldActionPerformed
 
     private void VIewPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VIewPassActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_VIewPassActionPerformed
+
+    private void BLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BLoginActionPerformed
+       LoginC C1 = new LoginC();
+       String UN = UsernameField.getText();
+       String PW = PassField.getText();
+       C1.setLogin(UN,PW);
+       
+       
+       
+       
+    }//GEN-LAST:event_BLoginActionPerformed
+
+    private void PassFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassFieldActionPerformed
+        
+    }//GEN-LAST:event_PassFieldActionPerformed
+
+    private void RegMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegMouseEntered
+       Register.setForeground(new java.awt.Color(0, 0, 0));
+    }//GEN-LAST:event_RegMouseEntered
+
+    private void RegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegMouseClicked
+        ManagerReg reg = new ManagerReg();
+        this.setVisible(false);
+        reg.setVisible(true);
+    }//GEN-LAST:event_RegMouseClicked
+
+    private void RegMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegMouseExited
+        Register.setForeground(new java.awt.Color(204, 204, 204));
+    }//GEN-LAST:event_RegMouseExited
 
     /**
      * @param args the command line arguments
@@ -242,12 +299,14 @@ public class LoginFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Login;
+    private javax.swing.JButton BLogin;
+    private javax.swing.JLabel ForgotPass;
     private javax.swing.JPanel LoginBox;
     private javax.swing.JPasswordField PassField;
     private javax.swing.JLabel PassIcon;
     private javax.swing.JLabel PassLabel;
     private javax.swing.JPanel PasswordPanel;
+    private javax.swing.JLabel Register;
     private javax.swing.JLabel TitleLable;
     private javax.swing.JLabel TitleLogo;
     private javax.swing.JLabel UserIcon;
