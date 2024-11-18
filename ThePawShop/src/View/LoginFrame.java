@@ -40,7 +40,7 @@ public class LoginFrame extends javax.swing.JFrame {
         TitleLogo = new javax.swing.JLabel();
         PassLabel = new javax.swing.JLabel();
         UserLabel = new javax.swing.JLabel();
-        VIewPass = new javax.swing.JToggleButton();
+        ViewPass = new javax.swing.JToggleButton();
         BLogin = new javax.swing.JButton();
         ForgotPass = new javax.swing.JLabel();
         Register = new javax.swing.JLabel();
@@ -70,7 +70,7 @@ public class LoginFrame extends javax.swing.JFrame {
         UserIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/user.png"))); // NOI18N
         UserIcon.setPreferredSize(new java.awt.Dimension(50, 50));
 
-        UsernameField.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        UsernameField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         UsernameField.setSelectionColor(new java.awt.Color(204, 204, 204));
         UsernameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +106,7 @@ public class LoginFrame extends javax.swing.JFrame {
         PassIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/lock.png"))); // NOI18N
         PassIcon.setPreferredSize(new java.awt.Dimension(50, 50));
 
-        PassField.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        PassField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         PassField.setSelectionColor(new java.awt.Color(204, 204, 204));
         PassField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,24 +138,32 @@ public class LoginFrame extends javax.swing.JFrame {
         TitleLogo.setName(""); // NOI18N
         LoginBox.add(TitleLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 28, -1, -1));
 
-        PassLabel.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        PassLabel.setFont(new java.awt.Font("Leelawadee UI", 1, 15)); // NOI18N
         PassLabel.setText("Password");
         LoginBox.add(PassLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
 
-        UserLabel.setFont(new java.awt.Font("Leelawadee UI", 1, 14)); // NOI18N
+        UserLabel.setFont(new java.awt.Font("Leelawadee UI", 1, 15)); // NOI18N
         UserLabel.setText("Username");
         LoginBox.add(UserLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
 
-        VIewPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/eye-crossedW.png"))); // NOI18N
-        VIewPass.setBorder(null);
-        VIewPass.setFocusable(false);
-        VIewPass.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/eyeW.png"))); // NOI18N
-        VIewPass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VIewPassActionPerformed(evt);
+        ViewPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/eye-crossedW.png"))); // NOI18N
+        ViewPass.setBorder(null);
+        ViewPass.setFocusable(false);
+        ViewPass.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/eyeW.png"))); // NOI18N
+        ViewPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ViewPassMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ViewPassMouseExited(evt);
             }
         });
-        LoginBox.add(VIewPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 245, -1, -1));
+        ViewPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewPassActionPerformed(evt);
+            }
+        });
+        LoginBox.add(ViewPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 245, -1, -1));
 
         BLogin.setBackground(new java.awt.Color(0, 102, 102));
         BLogin.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
@@ -230,9 +238,12 @@ public class LoginFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_UsernameFieldActionPerformed
 
-    private void VIewPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VIewPassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_VIewPassActionPerformed
+    private void ViewPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewPassActionPerformed
+     if(ViewPass.isSelected()){
+         PassField.setEchoChar((char) 0);
+    }
+     else {PassField.setEchoChar('*');}
+    }//GEN-LAST:event_ViewPassActionPerformed
 
     private void BLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BLoginActionPerformed
        LoginC C1 = new LoginC();
@@ -262,6 +273,16 @@ public class LoginFrame extends javax.swing.JFrame {
     private void RegMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegMouseExited
         Register.setForeground(new java.awt.Color(204, 204, 204));
     }//GEN-LAST:event_RegMouseExited
+
+    private void ViewPassMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewPassMouseEntered
+        PassField.setEchoChar((char) 0);
+    }//GEN-LAST:event_ViewPassMouseEntered
+
+    private void ViewPassMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewPassMouseExited
+      if(ViewPass.isSelected()){
+        PassField.setEchoChar((char) 0);}
+      else {PassField.setEchoChar('*');}
+    }//GEN-LAST:event_ViewPassMouseExited
 
     /**
      * @param args the command line arguments
@@ -313,7 +334,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JLabel UserLabel;
     private javax.swing.JTextField UsernameField;
     private javax.swing.JPanel UsernamePanel;
-    private javax.swing.JToggleButton VIewPass;
+    private javax.swing.JToggleButton ViewPass;
     private javax.swing.JLabel bgIMG;
     private javax.swing.JPanel bgPanel;
     // End of variables declaration//GEN-END:variables
