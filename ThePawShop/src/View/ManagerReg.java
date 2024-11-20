@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
+import Controller.RegisterC;
+import Model.RegisterM;
 
 /**
  *
@@ -26,6 +28,7 @@ public class ManagerReg extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BGcard = new javax.swing.JPanel();
         BGPanel = new javax.swing.JPanel();
         Back_B = new javax.swing.JLabel();
         Mbox = new javax.swing.JPanel();
@@ -39,13 +42,23 @@ public class ManagerReg extends javax.swing.JFrame {
         LLname = new javax.swing.JLabel();
         LPass = new javax.swing.JLabel();
         LFname = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        bRegister = new javax.swing.JButton();
         BG = new javax.swing.JLabel();
+        DeDP = new javax.swing.JPanel();
+        MsgBox = new javax.swing.JPanel();
+        RegistrationStatus = new javax.swing.JLabel();
+        PWlabel = new javax.swing.JLabel();
+        PassStatus = new javax.swing.JLabel();
+        UNlable = new javax.swing.JLabel();
+        UsernameStatus = new javax.swing.JLabel();
+        bReturn = new javax.swing.JButton();
+        BG1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
+
+        BGcard.setLayout(new java.awt.CardLayout());
 
         BGPanel.setFocusable(false);
         BGPanel.setMaximumSize(new java.awt.Dimension(1280, 720));
@@ -108,12 +121,17 @@ public class ManagerReg extends javax.swing.JFrame {
         LFname.setText("First Name");
         Mbox.add(LFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 125, 180, 30));
 
-        jButton1.setBackground(new java.awt.Color(22, 163, 74));
-        jButton1.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Register");
-        jButton1.setFocusable(false);
-        Mbox.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 545, 390, 40));
+        bRegister.setBackground(new java.awt.Color(22, 163, 74));
+        bRegister.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
+        bRegister.setForeground(new java.awt.Color(255, 255, 255));
+        bRegister.setText("Register");
+        bRegister.setFocusable(false);
+        bRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRegisterActionPerformed(evt);
+            }
+        });
+        Mbox.add(bRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 545, 390, 40));
 
         BGPanel.add(Mbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 530, 610));
 
@@ -125,19 +143,73 @@ public class ManagerReg extends javax.swing.JFrame {
         BG.setPreferredSize(new java.awt.Dimension(1280, 720));
         BGPanel.add(BG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        BGcard.add(BGPanel, "card2");
+
+        DeDP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        MsgBox.setBackground(new java.awt.Color(255, 255, 255));
+        MsgBox.setPreferredSize(new java.awt.Dimension(530, 420));
+        MsgBox.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RegistrationStatus.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        RegistrationStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MsgBox.add(RegistrationStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 40, 410, 40));
+
+        PWlabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        PWlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PWlabel.setText("Your Password:");
+        MsgBox.add(PWlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 150, 40));
+
+        PassStatus.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        PassStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MsgBox.add(PassStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 300, 40));
+
+        UNlable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        UNlable.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        UNlable.setText("Your Username:");
+        MsgBox.add(UNlable, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 150, 40));
+
+        UsernameStatus.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        UsernameStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MsgBox.add(UsernameStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 300, 40));
+
+        bReturn.setBackground(new java.awt.Color(204, 204, 204));
+        bReturn.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 14)); // NOI18N
+        bReturn.setText("Return");
+        bReturn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bReturnActionPerformed(evt);
+            }
+        });
+        MsgBox.add(bReturn, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 270, 40));
+
+        DeDP.add(MsgBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 530, 420));
+
+        BG1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/gradient.png"))); // NOI18N
+        BG1.setFocusable(false);
+        BG1.setMaximumSize(new java.awt.Dimension(1280, 720));
+        BG1.setMinimumSize(new java.awt.Dimension(1280, 720));
+        BG1.setName(""); // NOI18N
+        BG1.setPreferredSize(new java.awt.Dimension(1280, 720));
+        DeDP.add(BG1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        BGcard.add(DeDP, "card3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(BGPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 527, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(BGcard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(BGPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 268, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(BGcard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -153,6 +225,53 @@ public class ManagerReg extends javax.swing.JFrame {
     private void mFnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mFnameActionPerformed
+
+    private void bRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRegisterActionPerformed
+        
+        
+        String Un = mFname.getText();
+        String Pass = mPass.getText();
+        String lName =  mLname.getText();
+        String NIC = mNIC.getText();
+        
+        RegisterM REGM = new RegisterM();
+        RegisterC REGC = new RegisterC();
+        REGC.Register(Un,Pass,lName,NIC);
+        
+        boolean Status = REGM.Status();
+        
+        if(Status == true){
+            RegistrationStatus.setText("Registration Successful");
+            UsernameStatus.setText("MG-"+mFname.getText());
+            PassStatus.setText(mPass.getText());
+                }
+        
+        else {
+            RegistrationStatus.setText("Registration Failed");
+        }
+        
+        
+        
+        
+        BGPanel.setVisible(false);
+        DeDP.setVisible(true);
+    }//GEN-LAST:event_bRegisterActionPerformed
+
+    private void bReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bReturnActionPerformed
+        if(RegistrationStatus.getText().equals("Registration Successful")){
+        
+        BGPanel.setVisible(false);
+        DeDP.setVisible(false);
+        LoginFrame LF = new LoginFrame();
+        LF.setVisible(true);
+        }
+        
+        else{
+            DeDP.setVisible(false);
+            BGPanel.setVisible(true);
+        }
+       
+    }//GEN-LAST:event_bReturnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,15 +310,25 @@ public class ManagerReg extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BG;
+    private javax.swing.JLabel BG1;
     private javax.swing.JPanel BGPanel;
+    private javax.swing.JPanel BGcard;
     private javax.swing.JLabel Back_B;
+    private javax.swing.JPanel DeDP;
     private javax.swing.JLabel LFname;
     private javax.swing.JLabel LLname;
     private javax.swing.JLabel LNIC;
     private javax.swing.JLabel LPass;
     private javax.swing.JPanel MField_H;
     private javax.swing.JPanel Mbox;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel MsgBox;
+    private javax.swing.JLabel PWlabel;
+    private javax.swing.JLabel PassStatus;
+    private javax.swing.JLabel RegistrationStatus;
+    private javax.swing.JLabel UNlable;
+    private javax.swing.JLabel UsernameStatus;
+    private javax.swing.JButton bRegister;
+    private javax.swing.JButton bReturn;
     private javax.swing.JTextField mFname;
     private javax.swing.JLabel mForumTitle;
     private javax.swing.JTextField mLname;

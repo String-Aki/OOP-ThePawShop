@@ -26,6 +26,11 @@ public class LoginM {
     return Username;
     }
     
+    @Override
+    public String toString(){
+    return Username + "," + Password;
+    }
+    
     
     
     
