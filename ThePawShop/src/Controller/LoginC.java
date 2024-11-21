@@ -19,9 +19,13 @@ public class LoginC {
     }
     
     public void Login(String Username, String Password){
-        model.setLoginM(Username, Password);
-        model.LoginM();
+//        model.setLoginM(Username, Password);
+        model.LoginF(Username,Password);
         
     }
-            
+    
+    public boolean getMatch(){
+    return model.getMatch();}
+    
+     
 }

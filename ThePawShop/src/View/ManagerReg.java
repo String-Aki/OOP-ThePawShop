@@ -239,6 +239,7 @@ public class ManagerReg extends javax.swing.JFrame {
         RegisterC REGC = new RegisterC();
         REGC.Register(Un,Pass,lName,NIC);
         
+        
         boolean Status = REGM.Status();
         
         if(Status == true){

@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
+import Controller.ForgotPassC;
 import Model.LoginM;
 import Controller.LoginC;
+import Model.ForgotPassM;
 import javax.swing.JOptionPane;
 
 /**
@@ -71,7 +73,6 @@ public class LoginFrame extends javax.swing.JFrame {
 
         LoginBox.setBackground(new java.awt.Color(255, 255, 255));
         LoginBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        LoginBox.setFocusable(false);
         LoginBox.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TitleLable.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
@@ -267,7 +268,7 @@ public class LoginFrame extends javax.swing.JFrame {
         fLnameLabel.setText("Last Name");
         ForgotBox1.add(fLnameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 120, 30));
 
-        fLname.setFont(new java.awt.Font("Centaur", 0, 18)); // NOI18N
+        fLname.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         fLname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fLnameActionPerformed(evt);
@@ -279,7 +280,7 @@ public class LoginFrame extends javax.swing.JFrame {
         fNICLabel.setText("NIC");
         ForgotBox1.add(fNICLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 120, 30));
 
-        fNIC.setFont(new java.awt.Font("Centaur", 0, 18)); // NOI18N
+        fNIC.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         fNIC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fNICActionPerformed(evt);
@@ -292,6 +293,11 @@ public class LoginFrame extends javax.swing.JFrame {
         RetrievePass.setForeground(new java.awt.Color(255, 255, 255));
         RetrievePass.setText("Retrive Password");
         RetrievePass.setToolTipText("");
+        RetrievePass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RetrievePassActionPerformed(evt);
+            }
+        });
         ForgotBox1.add(RetrievePass, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 390, 40));
 
         ReturnLogin.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 15)); // NOI18N
@@ -360,12 +366,13 @@ public class LoginFrame extends javax.swing.JFrame {
        String PW = PassField.getText();
        C1.Login(UN,PW);
        
-       LoginM M1 = new LoginM();
-       boolean match = M1.getMatch();
+       
+       boolean match = C1.getMatch();
        
        if(match == true){
            
        JOptionPane.showMessageDialog(null, "Logged in");
+       LoginLabel.setVisible(false);
        }
        
        if (match == false){
@@ -425,6 +432,25 @@ public class LoginFrame extends javax.swing.JFrame {
         ForgotPanel.setVisible(true);
         bgPanel.setVisible(false);
     }//GEN-LAST:event_ForgotPassMouseClicked
+
+    private void RetrievePassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetrievePassActionPerformed
+        String Lname = fLname.getText();
+        String NIC = fNIC.getText();
+  
+        ForgotPassC F1 = new ForgotPassC();
+        
+        F1.RetrievePass(Lname, NIC);
+        boolean found = F1.getMatch();
+        
+        if(found == true){
+        JOptionPane.showMessageDialog(null, "Match Found");
+       
+        }
+        
+        else{
+            JOptionPane.showMessageDialog(null, "Match not Found");
+        }
+    }//GEN-LAST:event_RetrievePassActionPerformed
 
     /**
      * @param args the command line arguments
