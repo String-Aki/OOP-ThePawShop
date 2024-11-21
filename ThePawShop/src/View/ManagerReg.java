@@ -220,6 +220,7 @@ public class ManagerReg extends javax.swing.JFrame {
        LoginFrame LF = new LoginFrame();
         this.setVisible(false);
         LF.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Back_BMouseClicked
 
     private void mFnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFnameActionPerformed
@@ -260,8 +261,7 @@ public class ManagerReg extends javax.swing.JFrame {
     private void bReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bReturnActionPerformed
         if(RegistrationStatus.getText().equals("Registration Successful")){
         
-        BGPanel.setVisible(false);
-        DeDP.setVisible(false);
+        this.dispose();
         LoginFrame LF = new LoginFrame();
         LF.setVisible(true);
         }

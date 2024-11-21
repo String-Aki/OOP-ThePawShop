@@ -1,19 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Model;
-import View.ManagerReg;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import View.ManagerReg;
+
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Deepak
- */
+
 public class RegisterM {
     private String lName;
     private String NIC;
@@ -51,7 +44,7 @@ public class RegisterM {
     public void writeCred(){
 
     try(FileWriter insert = new FileWriter("ManagerCred.txt", true)){
-    insert.write(Username + "," + Password+ "\n");
+    insert.write(Username + "," + Password+ ",");
     insert.write(lName + "," + NIC +"\n");
     status = true;
 //    return "Passed";
