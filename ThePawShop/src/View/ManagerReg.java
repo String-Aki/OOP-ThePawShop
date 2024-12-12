@@ -4,7 +4,6 @@
  */
 package View;
 import Controller.RegisterC;
-import Model.RegisterM;
 
 /**
  *
@@ -12,9 +11,8 @@ import Model.RegisterM;
  */
 public class ManagerReg extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ManagerReg
-     */
+    RegisterC Reg = new RegisterC();
+    
     public ManagerReg() {
         initComponents();
     }
@@ -55,7 +53,6 @@ public class ManagerReg extends javax.swing.JFrame {
         BG1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
 
         BGcard.setLayout(new java.awt.CardLayout());
@@ -80,7 +77,7 @@ public class ManagerReg extends javax.swing.JFrame {
         mForumTitle.setBackground(new java.awt.Color(255, 255, 255));
         mForumTitle.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         mForumTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mForumTitle.setText("Manager Registration ");
+        mForumTitle.setText("Cashier Registration ");
         Mbox.add(mForumTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 36, 390, 60));
 
         MField_H.setBackground(new java.awt.Color(255, 255, 255));
@@ -235,16 +232,14 @@ public class ManagerReg extends javax.swing.JFrame {
         String lName =  mLname.getText();
         String NIC = mNIC.getText();
         
-        RegisterM REGM = new RegisterM();
-        RegisterC REGC = new RegisterC();
-        REGC.Register(Un,Pass,lName,NIC);
+        Reg.Register(Un, Pass, lName, NIC);
         
         
-        boolean Status = REGM.Status();
+        boolean Status = Reg.getStatus();
         
         if(Status == true){
             RegistrationStatus.setText("Registration Successful");
-            UsernameStatus.setText("MG-"+mFname.getText());
+            UsernameStatus.setText("Cs-" + mFname.getText());
             PassStatus.setText(mPass.getText());
                 }
         

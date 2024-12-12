@@ -8,17 +8,18 @@ import javax.swing.JOptionPane;
 
 
 public class RegisterM {
+   
+    private String Username;
+    private String Password;
     private String lName;
     private String NIC;
-    private String Password;
-    private String Username;
     
     public boolean status =true;
     
-    public void setRegisterM(String Username,String Password,String fname,String NIC){
-        this.Username = "MG-" + Username;
+    public RegisterM(String fName,String Password,String lname,String NIC){
+        this.Username = "Cs-" + fName;
         this.Password = Password;
-        this.lName = fname;
+        this.lName = lname;
         this.NIC = NIC;
     }
    
@@ -31,7 +32,7 @@ public class RegisterM {
     return Password;
     }
     
-    public String getfName(){
+    public String getlName(){
     return lName;
     }
     

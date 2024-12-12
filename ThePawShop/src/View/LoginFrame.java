@@ -1,26 +1,23 @@
+package View;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package View;
-import Controller.ForgotPassC;
-import Model.LoginM;
+
+
 import Controller.LoginC;
-import Model.ForgotPassM;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Deepak
- */
+
+
 public class LoginFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form LoginFrame
-     */
+    LoginC LCont = new LoginC();
+
     public LoginFrame() {
         initComponents();
-    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,8 +44,8 @@ public class LoginFrame extends javax.swing.JFrame {
         ViewPass = new javax.swing.JToggleButton();
         BLogin = new javax.swing.JButton();
         ForgotPass = new javax.swing.JLabel();
-        Register = new javax.swing.JLabel();
         LoginLabel = new javax.swing.JLabel();
+        RoleSel = new javax.swing.JComboBox<>();
         bgIMG = new javax.swing.JLabel();
         ForgotPanel = new javax.swing.JPanel();
         ForgotBox1 = new javax.swing.JPanel();
@@ -89,11 +86,6 @@ public class LoginFrame extends javax.swing.JFrame {
 
         UsernameField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         UsernameField.setSelectionColor(new java.awt.Color(204, 204, 204));
-        UsernameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameFieldActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout UsernamePanelLayout = new javax.swing.GroupLayout(UsernamePanel);
         UsernamePanel.setLayout(UsernamePanelLayout);
@@ -125,11 +117,6 @@ public class LoginFrame extends javax.swing.JFrame {
 
         PassField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         PassField.setSelectionColor(new java.awt.Color(204, 204, 204));
-        PassField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PassFieldActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout PasswordPanelLayout = new javax.swing.GroupLayout(PasswordPanel);
         PasswordPanel.setLayout(PasswordPanelLayout);
@@ -211,25 +198,6 @@ public class LoginFrame extends javax.swing.JFrame {
         });
         LoginBox.add(ForgotPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 60, -1));
 
-        Register.setFont(new java.awt.Font("Arial", 3, 13)); // NOI18N
-        Register.setForeground(new java.awt.Color(153, 153, 153));
-        Register.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Register.setText("Register");
-        Register.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Register.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Register.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RegMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                RegMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                RegMouseExited(evt);
-            }
-        });
-        LoginBox.add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 112, 60, -1));
-
         LoginLabel.setFont(new java.awt.Font("Rockwell", 2, 20)); // NOI18N
         LoginLabel.setForeground(new java.awt.Color(255, 102, 102));
         LoginLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -237,6 +205,11 @@ public class LoginFrame extends javax.swing.JFrame {
         LoginLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         LoginLabel.setVisible(false);
         LoginBox.add(LoginLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, -3, 160, 40));
+
+        RoleSel.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        RoleSel.setMaximumRowCount(2);
+        RoleSel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Cashier" }));
+        LoginBox.add(RoleSel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 112, 80, -1));
 
         bgPanel.add(LoginBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 160, 450, 365));
 
@@ -269,11 +242,6 @@ public class LoginFrame extends javax.swing.JFrame {
         ForgotBox1.add(fLnameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 120, 30));
 
         fLname.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        fLname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fLnameActionPerformed(evt);
-            }
-        });
         ForgotBox1.add(fLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 440, 50));
 
         fNICLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
@@ -281,11 +249,6 @@ public class LoginFrame extends javax.swing.JFrame {
         ForgotBox1.add(fNICLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 120, 30));
 
         fNIC.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        fNIC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fNICActionPerformed(evt);
-            }
-        });
         ForgotBox1.add(fNIC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 440, 50));
 
         RetrievePass.setBackground(new java.awt.Color(34, 92, 255));
@@ -348,11 +311,6 @@ public class LoginFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed
-
-        
-    }//GEN-LAST:event_UsernameFieldActionPerformed
-
     private void ViewPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewPassActionPerformed
      if(ViewPass.isSelected()){
          PassField.setEchoChar((char) 0);
@@ -361,48 +319,47 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ViewPassActionPerformed
 
     private void BLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BLoginActionPerformed
-       LoginC C1 = new LoginC();
+       
        String UN = UsernameField.getText();
        String PW = PassField.getText();
-       C1.Login(UN,PW);
        
+       String Role = (String) RoleSel.getSelectedItem();
        
-       boolean match = C1.getMatch();
-       
-       if(match == true){
+       if(Role.equals("Manager")){
+           LCont.LoginM(UN, PW);
+           Boolean match = LCont.getMatchM();
            
-       JOptionPane.showMessageDialog(null, "Logged in");
-       LoginLabel.setVisible(false);
+           if(match == true){
+           LoginLabel.setVisible(false);
+           JOptionPane.showMessageDialog(null,"Login Successful");
+           }
+           
+           else{
+               LoginLabel.setVisible(true);
+               JOptionPane.showMessageDialog(null,"Login Failed");}
+           
        }
        
-       if (match == false){
-       ForgotPass.setVisible(true);
-       LoginLabel.setVisible(true);
-       
+       else if (Role.equals("Cashier")){
+           LCont.LoginC(UN, PW);
+           Boolean match = LCont.getMatchC();
+           
+           if(match == true){
+               LoginLabel.setVisible(false);
+               ForgotPass.setVisible(false);
+           JOptionPane.showMessageDialog(null,"Login Successful C");
+           }
+           
+           else{
+               LoginLabel.setVisible(true);
+               ForgotPass.setVisible(true);
+               JOptionPane.showMessageDialog(null,"Login Failed C");
+           }
+           
+           
        }
-       
-       
-       
        
     }//GEN-LAST:event_BLoginActionPerformed
-
-    private void PassFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassFieldActionPerformed
-        
-    }//GEN-LAST:event_PassFieldActionPerformed
-
-    private void RegMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegMouseEntered
-       Register.setForeground(new java.awt.Color(0, 0, 0));
-    }//GEN-LAST:event_RegMouseEntered
-
-    private void RegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegMouseClicked
-        ManagerReg reg = new ManagerReg();
-        this.setVisible(false);
-        reg.setVisible(true);
-    }//GEN-LAST:event_RegMouseClicked
-
-    private void RegMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegMouseExited
-        Register.setForeground(new java.awt.Color(204, 204, 204));
-    }//GEN-LAST:event_RegMouseExited
 
     private void ViewPassMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewPassMouseEntered
         PassField.setEchoChar((char) 0);
@@ -413,14 +370,6 @@ public class LoginFrame extends javax.swing.JFrame {
         PassField.setEchoChar((char) 0);}
       else {PassField.setEchoChar('*');}
     }//GEN-LAST:event_ViewPassMouseExited
-
-    private void fLnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fLnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fLnameActionPerformed
-
-    private void fNICActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fNICActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fNICActionPerformed
 
     private void ReturnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReturnLoginMouseClicked
         
@@ -434,22 +383,7 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ForgotPassMouseClicked
 
     private void RetrievePassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetrievePassActionPerformed
-        String Lname = fLname.getText();
-        String NIC = fNIC.getText();
-  
-        ForgotPassC F1 = new ForgotPassC();
-        
-        F1.RetrievePass(Lname, NIC);
-        boolean found = F1.getMatch();
-        
-        if(found == true){
-        JOptionPane.showMessageDialog(null, "Match Found");
-       
-        }
-        
-        else{
-            JOptionPane.showMessageDialog(null, "Match not Found");
-        }
+
     }//GEN-LAST:event_RetrievePassActionPerformed
 
     /**
@@ -500,9 +434,9 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JLabel PassIcon;
     private javax.swing.JLabel PassLabel;
     private javax.swing.JPanel PasswordPanel;
-    private javax.swing.JLabel Register;
     private javax.swing.JButton RetrievePass;
     private javax.swing.JLabel ReturnLogin;
+    private javax.swing.JComboBox<String> RoleSel;
     private javax.swing.JLabel TitleLable;
     private javax.swing.JLabel TitleLogo;
     private javax.swing.JLabel UserIcon;
@@ -520,3 +454,4 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JLabel txtLabel;
     // End of variables declaration//GEN-END:variables
 }
+
