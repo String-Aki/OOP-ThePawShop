@@ -10,6 +10,7 @@ public class LoginC {
    public boolean matchM;
    public boolean matchC;
     
+   //LoginM authenticates Manager's Login - Using Default constructors
     public void LoginM(String Username, String Password){
         
         LoginM Lm = new LoginM();
@@ -26,10 +27,7 @@ public class LoginC {
     
     
     
-    
-    
-    
-            
+//LoginC authenticates Cashier's Login - Uses Parametric Constructor and method overriding
     public void LoginC(String Username,String Password){
         
         LoginM Lc = new LoginM(Username,Password);
@@ -38,10 +36,10 @@ public class LoginC {
         
         BufferedReader read = new BufferedReader(new FileReader("CashierCred.txt"));
         String Line;
-//        spliting the line of data stored for manager registratation into variables
+//        spliting the line of data stored for cashier registratation into variables
         while((Line = read.readLine())!= null){
         String CsData[] = Line.split(",");
-        if(CsData.length == 4){
+        if(CsData.length == 6){
         
         String auth1 = CsData[0].trim();
         String auth2 = CsData[1].trim();
@@ -49,13 +47,11 @@ public class LoginC {
 //        checking if the stored values match the entered values
         if(Lc.getUsername().equals(auth1) && Lc.getPassword().equals(auth2)){
             matchC = true;
-//            JOptionPane.showMessageDialog(null,"Login Successful");
             break;
         }
         
         else {
             matchC = false;
-//            JOptionPane.showMessageDialog(null,"Login Failed");
         
         }
         
@@ -78,9 +74,6 @@ public class LoginC {
     return matchC;
     }
     
-    
-    
-
 }
     
 

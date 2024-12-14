@@ -6,7 +6,7 @@ package View;
  */
 
 
-import Controller.LoginC;
+import Controller.*;
 import javax.swing.JOptionPane;
 
 
@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 public class LoginFrame extends javax.swing.JFrame {
 
     LoginC LCont = new LoginC();
+    CashierReg CReg = new CashierReg();
+    RegisterC RegC = new RegisterC();
 
     public LoginFrame() {
         initComponents();
@@ -43,20 +45,25 @@ public class LoginFrame extends javax.swing.JFrame {
         UserLabel = new javax.swing.JLabel();
         ViewPass = new javax.swing.JToggleButton();
         BLogin = new javax.swing.JButton();
-        ForgotPass = new javax.swing.JLabel();
         LoginLabel = new javax.swing.JLabel();
         RoleSel = new javax.swing.JComboBox<>();
         bgIMG = new javax.swing.JLabel();
-        ForgotPanel = new javax.swing.JPanel();
-        ForgotBox1 = new javax.swing.JPanel();
-        FTitleLable1 = new javax.swing.JLabel();
-        fLnameLabel = new javax.swing.JLabel();
-        fLname = new javax.swing.JTextField();
-        fNICLabel = new javax.swing.JLabel();
-        fNIC = new javax.swing.JTextField();
-        RetrievePass = new javax.swing.JButton();
-        ReturnLogin = new javax.swing.JLabel();
-        txtLabel = new javax.swing.JLabel();
+        MDBoard = new javax.swing.JPanel();
+        Dboard = new javax.swing.JPanel();
+        MgTitlePanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        MgCashier = new javax.swing.JButton();
+        MgLogout = new javax.swing.JLabel();
+        MgProduct = new javax.swing.JButton();
+        MgBase = new javax.swing.JPanel();
+        ManageP = new javax.swing.JPanel();
+        ManageC = new javax.swing.JPanel();
+        MgCSearch = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        CViewAll = new javax.swing.JButton();
+        CAdd = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TCashier = new javax.swing.JTable();
         bgIMG1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -184,20 +191,6 @@ public class LoginFrame extends javax.swing.JFrame {
         });
         LoginBox.add(BLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 60, 30));
 
-        ForgotPass.setFont(new java.awt.Font("Arial", 3, 13)); // NOI18N
-        ForgotPass.setForeground(new java.awt.Color(0, 102, 102));
-        ForgotPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ForgotPass.setText("Forgot?");
-        ForgotPass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ForgotPass.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        ForgotPass.setVisible(false);
-        ForgotPass.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ForgotPassMouseClicked(evt);
-            }
-        });
-        LoginBox.add(ForgotPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 60, -1));
-
         LoginLabel.setFont(new java.awt.Font("Rockwell", 2, 20)); // NOI18N
         LoginLabel.setForeground(new java.awt.Color(255, 102, 102));
         LoginLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -223,62 +216,184 @@ public class LoginFrame extends javax.swing.JFrame {
 
         BasePanel.add(bgPanel, "card3");
 
-        ForgotPanel.setBackground(new java.awt.Color(255, 255, 255));
-        ForgotPanel.setPreferredSize(new java.awt.Dimension(1280, 720));
-        ForgotPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        MDBoard.setBackground(new java.awt.Color(255, 255, 255));
+        MDBoard.setPreferredSize(new java.awt.Dimension(1280, 720));
+        MDBoard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ForgotBox1.setBackground(new java.awt.Color(255, 255, 255));
-        ForgotBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        ForgotBox1.setFocusable(false);
-        ForgotBox1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Dboard.setBackground(new java.awt.Color(255, 255, 255));
+        Dboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        FTitleLable1.setFont(new java.awt.Font("Constantia", 0, 28)); // NOI18N
-        FTitleLable1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        FTitleLable1.setText("Forgot Password");
-        ForgotBox1.add(FTitleLable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 300, 70));
+        MgTitlePanel.setBackground(new java.awt.Color(37, 99, 235));
 
-        fLnameLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        fLnameLabel.setText("Last Name");
-        ForgotBox1.add(fLnameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 120, 30));
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Manager Dashboard");
 
-        fLname.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        ForgotBox1.add(fLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 440, 50));
+        javax.swing.GroupLayout MgTitlePanelLayout = new javax.swing.GroupLayout(MgTitlePanel);
+        MgTitlePanel.setLayout(MgTitlePanelLayout);
+        MgTitlePanelLayout.setHorizontalGroup(
+            MgTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MgTitlePanelLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        MgTitlePanelLayout.setVerticalGroup(
+            MgTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MgTitlePanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
 
-        fNICLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
-        fNICLabel.setText("NIC");
-        ForgotBox1.add(fNICLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 120, 30));
+        Dboard.add(MgTitlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
 
-        fNIC.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        ForgotBox1.add(fNIC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 440, 50));
-
-        RetrievePass.setBackground(new java.awt.Color(34, 92, 255));
-        RetrievePass.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        RetrievePass.setForeground(new java.awt.Color(255, 255, 255));
-        RetrievePass.setText("Retrive Password");
-        RetrievePass.setToolTipText("");
-        RetrievePass.addActionListener(new java.awt.event.ActionListener() {
+        MgCashier.setBackground(new java.awt.Color(37, 99, 235));
+        MgCashier.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        MgCashier.setForeground(new java.awt.Color(255, 255, 255));
+        MgCashier.setText("Manage Cashiers");
+        MgCashier.setBorderPainted(false);
+        MgCashier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RetrievePassActionPerformed(evt);
+                MgCashierActionPerformed(evt);
             }
         });
-        ForgotBox1.add(RetrievePass, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 390, 40));
+        Dboard.add(MgCashier, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 370, 200, 70));
 
-        ReturnLogin.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 15)); // NOI18N
-        ReturnLogin.setForeground(new java.awt.Color(34, 92, 255));
-        ReturnLogin.setText("Login");
-        ReturnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ReturnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ReturnLoginMouseClicked(evt);
+        MgLogout.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        MgLogout.setForeground(new java.awt.Color(204, 204, 204));
+        MgLogout.setText("Logout");
+        MgLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MgLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MgLogoutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MgLogoutMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MgLogoutMousePressed(evt);
             }
         });
-        ForgotBox1.add(ReturnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 375, 40, 30));
+        Dboard.add(MgLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 607, -1, 28));
 
-        txtLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 15)); // NOI18N
-        txtLabel.setText("Remember your password?");
-        ForgotBox1.add(txtLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 375, 190, 30));
+        MgProduct.setBackground(new java.awt.Color(37, 99, 235));
+        MgProduct.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        MgProduct.setForeground(new java.awt.Color(255, 255, 255));
+        MgProduct.setText("Manage Products");
+        MgProduct.setBorderPainted(false);
+        MgProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MgProductActionPerformed(evt);
+            }
+        });
+        Dboard.add(MgProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 193, 200, 70));
 
-        ForgotPanel.add(ForgotBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 550, 440));
+        MDBoard.add(Dboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 300, 650));
+
+        MgBase.setBackground(new java.awt.Color(255, 255, 255));
+        MgBase.setLayout(new java.awt.CardLayout());
+
+        ManageP.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout ManagePLayout = new javax.swing.GroupLayout(ManageP);
+        ManageP.setLayout(ManagePLayout);
+        ManagePLayout.setHorizontalGroup(
+            ManagePLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 850, Short.MAX_VALUE)
+        );
+        ManagePLayout.setVerticalGroup(
+            ManagePLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+        );
+
+        MgBase.add(ManageP, "card2");
+
+        ManageC.setBackground(new java.awt.Color(255, 255, 255));
+
+        MgCSearch.setToolTipText("");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setText("Search");
+
+        CViewAll.setBackground(new java.awt.Color(37, 99, 235));
+        CViewAll.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CViewAll.setForeground(new java.awt.Color(255, 255, 255));
+        CViewAll.setText("View All");
+        CViewAll.setBorderPainted(false);
+        CViewAll.setFocusable(false);
+        CViewAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CViewAllActionPerformed(evt);
+            }
+        });
+
+        CAdd.setBackground(new java.awt.Color(37, 99, 235));
+        CAdd.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CAdd.setForeground(new java.awt.Color(255, 255, 255));
+        CAdd.setText("Add Cashier");
+        CAdd.setBorderPainted(false);
+        CAdd.setFocusable(false);
+        CAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CAddActionPerformed(evt);
+            }
+        });
+
+        TCashier.setAutoCreateRowSorter(true);
+        TCashier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        TCashier.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cashier ID", "Cashier Name", "Date of Birth", "Gender", "NIC"
+            }
+        ));
+        TCashier.setRowSelectionAllowed(true);
+        TCashier.setShowGrid(false);
+        jScrollPane1.setViewportView(TCashier);
+
+        javax.swing.GroupLayout ManageCLayout = new javax.swing.GroupLayout(ManageC);
+        ManageC.setLayout(ManageCLayout);
+        ManageCLayout.setHorizontalGroup(
+            ManageCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ManageCLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addGroup(ManageCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ManageCLayout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageCLayout.createSequentialGroup()
+                        .addGroup(ManageCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ManageCLayout.createSequentialGroup()
+                                .addComponent(MgCSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(88, 88, 88)
+                                .addComponent(CViewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                                .addComponent(CAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(32, 32, 32))))
+        );
+        ManageCLayout.setVerticalGroup(
+            ManageCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ManageCLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ManageCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(MgCSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CViewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        MgBase.add(ManageC, "card3");
+
+        MDBoard.add(MgBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 850, 650));
 
         bgIMG1.setForeground(new java.awt.Color(204, 204, 204));
         bgIMG1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/gradient.png"))); // NOI18N
@@ -286,9 +401,9 @@ public class LoginFrame extends javax.swing.JFrame {
         bgIMG1.setFocusable(false);
         bgIMG1.setMinimumSize(new java.awt.Dimension(0, 0));
         bgIMG1.setPreferredSize(new java.awt.Dimension(1280, 720));
-        ForgotPanel.add(bgIMG1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 760));
+        MDBoard.add(bgIMG1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 760));
 
-        BasePanel.add(ForgotPanel, "card2");
+        BasePanel.add(MDBoard, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -331,12 +446,13 @@ public class LoginFrame extends javax.swing.JFrame {
            
            if(match == true){
            LoginLabel.setVisible(false);
-           JOptionPane.showMessageDialog(null,"Login Successful");
+           MDBoard.setVisible(true);
+           bgPanel.setVisible(false);
            }
            
            else{
                LoginLabel.setVisible(true);
-               JOptionPane.showMessageDialog(null,"Login Failed");}
+               }
            
        }
        
@@ -346,18 +462,19 @@ public class LoginFrame extends javax.swing.JFrame {
            
            if(match == true){
                LoginLabel.setVisible(false);
-               ForgotPass.setVisible(false);
            JOptionPane.showMessageDialog(null,"Login Successful C");
            }
            
            else{
                LoginLabel.setVisible(true);
-               ForgotPass.setVisible(true);
                JOptionPane.showMessageDialog(null,"Login Failed C");
            }
            
            
        }
+       
+       UsernameField.setText("");
+       PassField.setText("");
        
     }//GEN-LAST:event_BLoginActionPerformed
 
@@ -371,20 +488,37 @@ public class LoginFrame extends javax.swing.JFrame {
       else {PassField.setEchoChar('*');}
     }//GEN-LAST:event_ViewPassMouseExited
 
-    private void ReturnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReturnLoginMouseClicked
-        
+    private void CViewAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CViewAllActionPerformed
+      RegC.ViewCashiers(TCashier);
+//        RegC.loadProductDataToTable(TCashier);
+    }//GEN-LAST:event_CViewAllActionPerformed
+
+    private void MgLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MgLogoutMouseEntered
+        MgLogout.setForeground(new java.awt.Color(0, 0, 0));
+    }//GEN-LAST:event_MgLogoutMouseEntered
+
+    private void MgLogoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MgLogoutMouseExited
+       MgLogout.setForeground(new java.awt.Color(204, 204, 204));
+    }//GEN-LAST:event_MgLogoutMouseExited
+
+    private void MgLogoutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MgLogoutMousePressed
         bgPanel.setVisible(true);
-        ForgotPanel.setVisible(false);
-    }//GEN-LAST:event_ReturnLoginMouseClicked
+        MDBoard.setVisible(false);
+    }//GEN-LAST:event_MgLogoutMousePressed
 
-    private void ForgotPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ForgotPassMouseClicked
-        ForgotPanel.setVisible(true);
-        bgPanel.setVisible(false);
-    }//GEN-LAST:event_ForgotPassMouseClicked
+    private void MgProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MgProductActionPerformed
+        ManageP.setVisible(true);
+        ManageC.setVisible(false);
+    }//GEN-LAST:event_MgProductActionPerformed
 
-    private void RetrievePassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetrievePassActionPerformed
+    private void CAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CAddActionPerformed
+       CReg.setVisible(true);
+    }//GEN-LAST:event_CAddActionPerformed
 
-    }//GEN-LAST:event_RetrievePassActionPerformed
+    private void MgCashierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MgCashierActionPerformed
+       ManageC.setVisible(true);
+       ManageP.setVisible(false);
+    }//GEN-LAST:event_MgCashierActionPerformed
 
     /**
      * @param args the command line arguments
@@ -424,19 +558,26 @@ public class LoginFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BLogin;
     private javax.swing.JPanel BasePanel;
-    private javax.swing.JLabel FTitleLable1;
-    private javax.swing.JPanel ForgotBox1;
-    private javax.swing.JPanel ForgotPanel;
-    private javax.swing.JLabel ForgotPass;
+    private javax.swing.JButton CAdd;
+    private javax.swing.JButton CViewAll;
+    private javax.swing.JPanel Dboard;
     private javax.swing.JPanel LoginBox;
     private javax.swing.JLabel LoginLabel;
+    private javax.swing.JPanel MDBoard;
+    public javax.swing.JPanel ManageC;
+    private javax.swing.JPanel ManageP;
+    private javax.swing.JPanel MgBase;
+    private javax.swing.JTextField MgCSearch;
+    private javax.swing.JButton MgCashier;
+    private javax.swing.JLabel MgLogout;
+    private javax.swing.JButton MgProduct;
+    private javax.swing.JPanel MgTitlePanel;
     private javax.swing.JPasswordField PassField;
     private javax.swing.JLabel PassIcon;
     private javax.swing.JLabel PassLabel;
     private javax.swing.JPanel PasswordPanel;
-    private javax.swing.JButton RetrievePass;
-    private javax.swing.JLabel ReturnLogin;
     private javax.swing.JComboBox<String> RoleSel;
+    private javax.swing.JTable TCashier;
     private javax.swing.JLabel TitleLable;
     private javax.swing.JLabel TitleLogo;
     private javax.swing.JLabel UserIcon;
@@ -447,11 +588,9 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JLabel bgIMG;
     private javax.swing.JLabel bgIMG1;
     private javax.swing.JPanel bgPanel;
-    private javax.swing.JTextField fLname;
-    private javax.swing.JLabel fLnameLabel;
-    private javax.swing.JTextField fNIC;
-    private javax.swing.JLabel fNICLabel;
-    private javax.swing.JLabel txtLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
 

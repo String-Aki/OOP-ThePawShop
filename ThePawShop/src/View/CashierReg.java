@@ -9,11 +9,11 @@ import Controller.RegisterC;
  *
  * @author Deepak
  */
-public class ManagerReg extends javax.swing.JFrame {
+public class CashierReg extends javax.swing.JFrame {
 
     RegisterC Reg = new RegisterC();
     
-    public ManagerReg() {
+    public CashierReg() {
         initComponents();
     }
 
@@ -32,15 +32,19 @@ public class ManagerReg extends javax.swing.JFrame {
         Mbox = new javax.swing.JPanel();
         mForumTitle = new javax.swing.JLabel();
         MField_H = new javax.swing.JPanel();
-        mFname = new javax.swing.JTextField();
-        mLname = new javax.swing.JTextField();
-        mPass = new javax.swing.JTextField();
-        mNIC = new javax.swing.JTextField();
+        cLname = new javax.swing.JTextField();
+        cPass = new javax.swing.JTextField();
+        cNIC = new javax.swing.JTextField();
         LNIC = new javax.swing.JLabel();
-        LLname = new javax.swing.JLabel();
         LPass = new javax.swing.JLabel();
-        LFname = new javax.swing.JLabel();
+        cFname = new javax.swing.JTextField();
+        cDOB = new javax.swing.JFormattedTextField();
+        LDOB = new javax.swing.JLabel();
+        LGender = new javax.swing.JLabel();
+        cGender = new javax.swing.JComboBox<>();
+        LLname = new javax.swing.JLabel();
         bRegister = new javax.swing.JButton();
+        LFname = new javax.swing.JLabel();
         BG = new javax.swing.JLabel();
         DeDP = new javax.swing.JPanel();
         MsgBox = new javax.swing.JPanel();
@@ -83,40 +87,47 @@ public class ManagerReg extends javax.swing.JFrame {
         MField_H.setBackground(new java.awt.Color(255, 255, 255));
         MField_H.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        mFname.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        mFname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mFnameActionPerformed(evt);
-            }
-        });
-        MField_H.add(mFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 450, 48));
+        cLname.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        MField_H.add(cLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 210, 48));
 
-        mLname.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        MField_H.add(mLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 104, 450, 48));
+        cPass.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        MField_H.add(cPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 104, 450, 48));
 
-        mPass.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        MField_H.add(mPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 207, 450, 48));
-
-        mNIC.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        MField_H.add(mNIC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 450, 48));
+        cNIC.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        MField_H.add(cNIC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 207, 450, 48));
 
         LNIC.setFont(new java.awt.Font("Leelawadee UI", 1, 15)); // NOI18N
         LNIC.setText("NIC");
-        MField_H.add(LNIC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 180, 30));
-
-        LLname.setFont(new java.awt.Font("Leelawadee UI", 1, 15)); // NOI18N
-        LLname.setText("Last Name");
-        MField_H.add(LLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 68, 180, 30));
+        MField_H.add(LNIC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 175, 180, 30));
 
         LPass.setFont(new java.awt.Font("Leelawadee UI", 1, 15)); // NOI18N
         LPass.setText("Password");
-        MField_H.add(LPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 180, 30));
+        MField_H.add(LPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 180, 30));
 
-        Mbox.add(MField_H, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 450, 360));
+        cFname.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        MField_H.add(cFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 210, 48));
 
-        LFname.setFont(new java.awt.Font("Leelawadee UI", 1, 15)); // NOI18N
-        LFname.setText("First Name");
-        Mbox.add(LFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 125, 180, 30));
+        cDOB.setColumns(3);
+        cDOB.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/mm/yyyy"))));
+        MField_H.add(cDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 210, 50));
+
+        LDOB.setFont(new java.awt.Font("Leelawadee UI", 1, 15)); // NOI18N
+        LDOB.setText("DOB");
+        MField_H.add(LDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 140, 30));
+
+        LGender.setFont(new java.awt.Font("Leelawadee UI", 1, 15)); // NOI18N
+        LGender.setText("Gender");
+        MField_H.add(LGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 140, 30));
+
+        cGender.setMaximumRowCount(2);
+        cGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        MField_H.add(cGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 210, 50));
+
+        Mbox.add(MField_H, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 450, 360));
+
+        LLname.setFont(new java.awt.Font("Leelawadee UI", 1, 15)); // NOI18N
+        LLname.setText("Last Name");
+        Mbox.add(LLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 115, 100, 30));
 
         bRegister.setBackground(new java.awt.Color(22, 163, 74));
         bRegister.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
@@ -129,6 +140,10 @@ public class ManagerReg extends javax.swing.JFrame {
             }
         });
         Mbox.add(bRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 545, 390, 40));
+
+        LFname.setFont(new java.awt.Font("Leelawadee UI", 1, 15)); // NOI18N
+        LFname.setText("First Name");
+        Mbox.add(LFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 115, 100, 30));
 
         BGPanel.add(Mbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 530, 610));
 
@@ -214,33 +229,28 @@ public class ManagerReg extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Back_BMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back_BMouseClicked
-       LoginFrame LF = new LoginFrame();
-        this.setVisible(false);
-        LF.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Back_BMouseClicked
-
-    private void mFnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mFnameActionPerformed
 
     private void bRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRegisterActionPerformed
         
         
-        String Un = mFname.getText();
-        String Pass = mPass.getText();
-        String lName =  mLname.getText();
-        String NIC = mNIC.getText();
+        String Un = cFname.getText();
+        String Pass = cPass.getText();
+        String lName =  cLname.getText();
+        String NIC = cNIC.getText();
+        String Gender = (String) cGender.getSelectedItem();
+        String DOB = cDOB.getText();
         
-        Reg.Register(Un, Pass, lName, NIC);
+        Reg.Register(Un, Pass, lName, NIC, Gender, DOB);
         
         
         boolean Status = Reg.getStatus();
         
         if(Status == true){
             RegistrationStatus.setText("Registration Successful");
-            UsernameStatus.setText("Cs-" + mFname.getText());
-            PassStatus.setText(mPass.getText());
+            UsernameStatus.setText("Cs-" + cFname.getText());
+            PassStatus.setText(cPass.getText());
                 }
         
         else {
@@ -258,8 +268,6 @@ public class ManagerReg extends javax.swing.JFrame {
         if(RegistrationStatus.getText().equals("Registration Successful")){
         
         this.dispose();
-        LoginFrame LF = new LoginFrame();
-        LF.setVisible(true);
         }
         
         else{
@@ -286,20 +294,21 @@ public class ManagerReg extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ManagerReg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CashierReg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ManagerReg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CashierReg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ManagerReg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CashierReg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ManagerReg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CashierReg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ManagerReg().setVisible(true);
+                new CashierReg().setVisible(true);
             }
         });
     }
@@ -311,7 +320,9 @@ public class ManagerReg extends javax.swing.JFrame {
     private javax.swing.JPanel BGcard;
     private javax.swing.JLabel Back_B;
     private javax.swing.JPanel DeDP;
+    private javax.swing.JLabel LDOB;
     private javax.swing.JLabel LFname;
+    private javax.swing.JLabel LGender;
     private javax.swing.JLabel LLname;
     private javax.swing.JLabel LNIC;
     private javax.swing.JLabel LPass;
@@ -325,10 +336,12 @@ public class ManagerReg extends javax.swing.JFrame {
     private javax.swing.JLabel UsernameStatus;
     private javax.swing.JButton bRegister;
     private javax.swing.JButton bReturn;
-    private javax.swing.JTextField mFname;
+    private javax.swing.JFormattedTextField cDOB;
+    private javax.swing.JTextField cFname;
+    private javax.swing.JComboBox<String> cGender;
+    private javax.swing.JTextField cLname;
+    private javax.swing.JTextField cNIC;
+    private javax.swing.JTextField cPass;
     private javax.swing.JLabel mForumTitle;
-    private javax.swing.JTextField mLname;
-    private javax.swing.JTextField mNIC;
-    private javax.swing.JTextField mPass;
     // End of variables declaration//GEN-END:variables
 }
