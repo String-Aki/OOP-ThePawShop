@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
-import Controller.RegisterC;
+import Controller.RegisterCashierC;
 
 /**
  *
@@ -11,7 +11,7 @@ import Controller.RegisterC;
  */
 public class CashierReg extends javax.swing.JFrame {
 
-    RegisterC Reg = new RegisterC();
+    RegisterCashierC Reg = new RegisterCashierC();
     
     public CashierReg() {
         initComponents();
@@ -245,7 +245,7 @@ public class CashierReg extends javax.swing.JFrame {
         Reg.Register(Un, Pass, lName, NIC, Gender, DOB);
         
         
-        boolean Status = Reg.getStatus();
+        boolean Status = Reg.returnStatus();
         
         if(Status == true){
             RegistrationStatus.setText("Registration Successful");

@@ -1,7 +1,7 @@
 
 package Model;
 
-public class RegisterM {
+public class RegisterCashierM {
    
     private String Username;
     private String Password;
@@ -12,7 +12,7 @@ public class RegisterM {
     
 
     
-    public RegisterM(String fName,String Password,String lname,String NIC, String Gender, String DOB){
+    public RegisterCashierM(String fName,String Password,String lname,String NIC, String Gender, String DOB){
         this.Username = "Cs-" + fName;
         this.Password = Password;
         this.lName = lname;
