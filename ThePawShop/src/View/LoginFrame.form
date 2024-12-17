@@ -617,10 +617,12 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="MgPSearch" min="-2" pref="289" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="SearchPico" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                              <Component id="SearchPico" min="-2" pref="26" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jLabel2" min="-2" pref="37" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                               <Component id="PViewAll" min="-2" pref="167" max="-2" attributes="0"/>
-                                              <EmptySpace pref="63" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                               <Component id="PAdd" min="-2" pref="167" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -641,10 +643,11 @@
                                   <Component id="PViewAll" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                                   <Component id="PAdd" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                                   <Component id="SearchPico" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" pref="495" max="-2" attributes="0"/>
-                              <EmptySpace pref="24" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="514" max="-2" attributes="0"/>
+                              <EmptySpace pref="52" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -776,6 +779,8 @@
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SearchPicoMouseClicked"/>
                       </Events>
                     </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel2">
+                    </Component>
                   </SubComponents>
                 </Container>
                 <Container class="javax.swing.JPanel" name="ManageC">
@@ -809,10 +814,10 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="MgCSearch" min="-2" pref="289" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="SearchCico" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                              <Component id="SearchCico" min="-2" pref="32" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                               <Component id="CViewAll" min="-2" pref="167" max="-2" attributes="0"/>
-                                              <EmptySpace pref="63" max="32767" attributes="0"/>
+                                              <EmptySpace pref="48" max="32767" attributes="0"/>
                                               <Component id="CAdd" min="-2" pref="167" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -909,8 +914,9 @@
                               </Border>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="5" rowCount="0">
+                              <Table columnCount="6" rowCount="0">
                                 <Column editable="true" title="Cashier ID" type="java.lang.Object"/>
+                                <Column editable="true" title="Password" type="java.lang.Object"/>
                                 <Column editable="true" title="Cashier Name" type="java.lang.Object"/>
                                 <Column editable="true" title="Date of Birth" type="java.lang.Object"/>
                                 <Column editable="true" title="Gender" type="java.lang.Object"/>
@@ -958,6 +964,9 @@
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Resources/Images/search.png"/>
+                        </Property>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Hand Cursor"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -1167,7 +1176,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="17" max="32767" attributes="0"/>
-                          <Component id="CsManageP" min="-2" pref="483" max="-2" attributes="0"/>
+                          <Component id="CsManageP" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1199,8 +1208,8 @@
                                           <Group type="102" attributes="0">
                                               <Component id="CsPSearch" min="-2" pref="382" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="CsSearchPico" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace pref="325" max="32767" attributes="0"/>
+                                              <Component id="CsSearchPico" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <EmptySpace pref="295" max="32767" attributes="0"/>
                                               <Component id="CsPViewAll" min="-2" pref="167" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                                               <Component id="CsPAdd" min="-2" pref="167" max="-2" attributes="0"/>
@@ -1218,15 +1227,17 @@
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Component id="SearchPLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="CsPSearch" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-                                  <Component id="CsPViewAll" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-                                  <Component id="CsPAdd" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="CsSearchPico" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="CsPSearch" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="CsPViewAll" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="CsPAdd" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" min="-2" pref="495" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane3" min="-2" pref="351" max="-2" attributes="0"/>
+                              <EmptySpace pref="15" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1243,6 +1254,9 @@
                           <Font name="Segoe UI" size="18" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Search"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Hand Cursor"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="CsPViewAll">

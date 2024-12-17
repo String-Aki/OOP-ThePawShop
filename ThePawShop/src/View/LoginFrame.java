@@ -18,6 +18,8 @@ public class LoginFrame extends javax.swing.JFrame {
     ViewAllCashier viewAllCs = new ViewAllCashier();
     ViewAllProducts viewAllP = new ViewAllProducts();
     AddProduct AP = new AddProduct();
+    SearchCashier SC = new SearchCashier();
+    SearchProduct SP = new SearchProduct();
 
     public LoginFrame() {
         initComponents();
@@ -67,6 +69,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         TProduct = new javax.swing.JTable();
         SearchPico = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         ManageC = new javax.swing.JPanel();
         MgCSearch = new javax.swing.JTextField();
         SearchLabel = new javax.swing.JLabel();
@@ -398,10 +401,12 @@ public class LoginFrame extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ManagePLayout.createSequentialGroup()
                                 .addComponent(MgPSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SearchPico)
-                                .addGap(44, 44, 44)
+                                .addComponent(SearchPico, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(PViewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                                .addGap(46, 46, 46)
                                 .addComponent(PAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(32, 32, 32))))
         );
@@ -415,10 +420,11 @@ public class LoginFrame extends javax.swing.JFrame {
                     .addComponent(MgPSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PViewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SearchPico, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addComponent(SearchPico, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         MgBase.add(ManageP, "card3");
@@ -461,13 +467,14 @@ public class LoginFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Cashier ID", "Cashier Name", "Date of Birth", "Gender", "NIC"
+                "Cashier ID", "Password", "Cashier Name", "Date of Birth", "Gender", "NIC"
             }
         ));
         TCashier.setShowGrid(false);
         jScrollPane1.setViewportView(TCashier);
 
         SearchCico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Images/search.png"))); // NOI18N
+        SearchCico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SearchCico.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SearchCicoMouseClicked(evt);
@@ -490,10 +497,10 @@ public class LoginFrame extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ManageCLayout.createSequentialGroup()
                                 .addComponent(MgCSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SearchCico)
-                                .addGap(44, 44, 44)
+                                .addComponent(SearchCico, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
                                 .addComponent(CViewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                                 .addComponent(CAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(32, 32, 32))))
         );
@@ -611,6 +618,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
         SearchPLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         SearchPLabel1.setText("Search");
+        SearchPLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         CsPViewAll.setBackground(new java.awt.Color(43, 130, 139));
         CsPViewAll.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -673,8 +681,8 @@ public class LoginFrame extends javax.swing.JFrame {
                             .addGroup(CsManagePLayout.createSequentialGroup()
                                 .addComponent(CsPSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(CsSearchPico)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 325, Short.MAX_VALUE)
+                                .addComponent(CsSearchPico, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 295, Short.MAX_VALUE)
                                 .addComponent(CsPViewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(53, 53, 53)
                                 .addComponent(CsPAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -686,14 +694,15 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(SearchPLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(CsManagePLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CsPSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CsPViewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CsPAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CsSearchPico, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(CsManagePLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CsSearchPico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(CsManagePLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(CsPSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CsPViewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CsPAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout CsBaseLayout = new javax.swing.GroupLayout(CsBase);
@@ -706,7 +715,7 @@ public class LoginFrame extends javax.swing.JFrame {
             CsBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CsBaseLayout.createSequentialGroup()
                 .addGap(0, 17, Short.MAX_VALUE)
-                .addComponent(CsManageP, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(CsManageP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         CDBoard.add(CsBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 1220, 500));
@@ -821,6 +830,8 @@ public class LoginFrame extends javax.swing.JFrame {
     private void MgLogoutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MgLogoutMousePressed
         bgPanel.setVisible(true);
         MDBoard.setVisible(false);
+        MgCSearch.setText("");
+        MgPSearch.setText("");
     }//GEN-LAST:event_MgLogoutMousePressed
 
     private void MgProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MgProductActionPerformed
@@ -838,7 +849,11 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_MgCashierActionPerformed
 
     private void SearchCicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchCicoMouseClicked
-  
+        String Search = MgCSearch.getText();
+        
+        SC.SearchCashierIDOrName(Search, TCashier);
+        
+        
     }//GEN-LAST:event_SearchCicoMouseClicked
 
     private void PViewAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PViewAllActionPerformed
@@ -850,7 +865,10 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_PAddActionPerformed
 
     private void SearchPicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchPicoMouseClicked
+      String Search = MgPSearch.getText();
       
+      SP.SearchProductIDOrCategory(Search, TProduct);
+        
     }//GEN-LAST:event_SearchPicoMouseClicked
 
     private void CsLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CsLogoutMouseEntered
@@ -864,18 +882,21 @@ public class LoginFrame extends javax.swing.JFrame {
     private void CsLogoutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CsLogoutMousePressed
         bgPanel.setVisible(true);
         CDBoard.setVisible(false);
+        CsPSearch.setText("");
     }//GEN-LAST:event_CsLogoutMousePressed
 
     private void CsPViewAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CsPViewAllActionPerformed
-        // TODO add your handling code here:
+        viewAllP.ViewAll(CsTProduct);
     }//GEN-LAST:event_CsPViewAllActionPerformed
 
     private void CsPAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CsPAddActionPerformed
-        // TODO add your handling code here:
+        AP.setVisible(true);
     }//GEN-LAST:event_CsPAddActionPerformed
 
     private void CsSearchPicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CsSearchPicoMouseClicked
-        // TODO add your handling code here:
+        String Result = CsPSearch.getText();
+        
+        SP.SearchProductIDOrCategory(Result, CsTProduct);
     }//GEN-LAST:event_CsSearchPicoMouseClicked
 
     /**
@@ -972,6 +993,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JLabel bgIMG3;
     private javax.swing.JPanel bgPanel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
