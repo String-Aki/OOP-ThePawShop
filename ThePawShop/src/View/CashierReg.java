@@ -56,7 +56,7 @@ public class CashierReg extends javax.swing.JFrame {
         bReturn = new javax.swing.JButton();
         BG1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         BGcard.setLayout(new java.awt.CardLayout());
@@ -237,7 +237,7 @@ public class CashierReg extends javax.swing.JFrame {
         
         String Un = cFname.getText();
         String Pass = cPass.getText();
-        String lName = cFname.getText() + " " + cLname.getText();
+        String lName =  cLname.getText();
         String NIC = cNIC.getText();
         String Gender = (String) cGender.getSelectedItem();
         String DOB = cDOB.getText();
@@ -268,24 +268,12 @@ public class CashierReg extends javax.swing.JFrame {
         if(RegistrationStatus.getText().equals("Registration Successful")){
         
         this.dispose();
-        
-        DeDP.setVisible(false);
-        BGPanel.setVisible(true);
-        
-        cFname.setText("");
-        cPass.setText("");
-        cLname.setText("");
-        cNIC.setText("");
-        cDOB.setText("");
-        
         }
         
         else{
             DeDP.setVisible(false);
             BGPanel.setVisible(true);
         }
-        
-        
        
     }//GEN-LAST:event_bReturnActionPerformed
 

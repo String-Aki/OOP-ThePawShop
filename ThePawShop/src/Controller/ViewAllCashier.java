@@ -15,7 +15,7 @@ public class ViewAllCashier extends ViewAllC {
     @Override
     public void ViewAll(JTable TCashier) {
         
-        String [] ColumnN = {"Cashier ID","Password", "Cashier Name", "Date of Birth", "Gender", "NIC"};
+        String [] ColumnN = {"Cashier ID", "Cashier Name", "Date of Birth", "Gender", "NIC"};
         
         DefaultTableModel TModel = new DefaultTableModel(ColumnN, 0);
         
@@ -32,11 +32,11 @@ public class ViewAllCashier extends ViewAllC {
         String CID = CData[0].trim();
         String Cpass = CData[1].trim();
         String Cname = CData[2].trim();
-        String CDOB = CData[3].trim();
+        String CNIC = CData[3].trim();
         String CGender = CData[4].trim();
-        String CNIC = CData[5].trim();
+        String CDOB = CData[5].trim();
         
-        TModel.addRow(new Object[]{CID,Cpass, Cname, CDOB, CGender, CNIC});
+        TModel.addRow(new Object[]{CID, Cname, CDOB, CGender, CNIC});
         
         }
         

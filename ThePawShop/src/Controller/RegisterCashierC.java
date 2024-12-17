@@ -30,8 +30,8 @@ public class RegisterCashierC extends RegisterC {
             
             try(FileWriter insert = new FileWriter(FileN, true)){
                 insert.write(Reg.getUsername()+ "," + Reg.getPassword() + ",");
-                insert.write(Reg.getlName() + "," + Reg.getDOB() + ",");
-                insert.write(Reg.getGender() + "," + Reg.getNIC() + "\n");
+                insert.write(Reg.getlName() + "," + Reg.getNIC() + ",");
+                insert.write(Reg.getGender() + "," + Reg.getDOB() + "\n");
                 status = true;
             }
     
