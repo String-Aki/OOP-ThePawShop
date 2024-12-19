@@ -5,6 +5,7 @@
 package View;
 
 import Controller.AddProductC;
+import Controller.ViewAllProducts;
 
 
 /**
@@ -186,7 +187,7 @@ public class AddProduct extends javax.swing.JFrame {
         
         add.Register(PID, PName, PCat, Price, Color, Brand);
         
-        this.dispose();
+        
         PIDField.setText("");
         PNameField.setText("");
         PCatField.setText("");

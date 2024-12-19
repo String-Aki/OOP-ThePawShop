@@ -385,7 +385,7 @@
                   </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="340" y="112" width="80" height="-1"/>
+                      <AbsoluteConstraints x="330" y="112" width="90" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -815,9 +815,9 @@
                                               <Component id="MgCSearch" min="-2" pref="289" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="SearchCico" min="-2" pref="32" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                              <EmptySpace pref="54" max="32767" attributes="0"/>
                                               <Component id="CViewAll" min="-2" pref="167" max="-2" attributes="0"/>
-                                              <EmptySpace pref="48" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                               <Component id="CAdd" min="-2" pref="167" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -839,8 +839,8 @@
                                   <Component id="CAdd" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                                   <Component id="SearchCico" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" pref="495" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="509" max="-2" attributes="0"/>
                               <EmptySpace pref="24" max="32767" attributes="0"/>
                           </Group>
                       </Group>

@@ -7,7 +7,7 @@ public class LoginM {
    private String Password; 
    
   
-   public boolean found;
+   
    
    // Constructors
    

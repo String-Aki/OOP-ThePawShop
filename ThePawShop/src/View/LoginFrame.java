@@ -240,7 +240,7 @@ public class LoginFrame extends javax.swing.JFrame {
         RoleSel.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         RoleSel.setMaximumRowCount(2);
         RoleSel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Cashier" }));
-        LoginBox.add(RoleSel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 112, 80, -1));
+        LoginBox.add(RoleSel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 112, 90, -1));
 
         bgPanel.add(LoginBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 160, 450, 365));
 
@@ -498,9 +498,9 @@ public class LoginFrame extends javax.swing.JFrame {
                                 .addComponent(MgCSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(SearchCico, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                                 .addComponent(CViewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                                .addGap(45, 45, 45)
                                 .addComponent(CAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(32, 32, 32))))
         );
@@ -515,8 +515,8 @@ public class LoginFrame extends javax.swing.JFrame {
                     .addComponent(CViewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SearchCico, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 

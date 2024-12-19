@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
 
 public class LoginC {
   
-   public boolean matchM;
-   public boolean matchC;
+   private boolean matchM;
+   private boolean matchC;
     
    //LoginM authenticates Manager's Login - Using Default constructors
     public void LoginM(String Username, String Password){
