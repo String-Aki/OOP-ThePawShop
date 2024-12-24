@@ -3,7 +3,7 @@ package Controller;
 
 import Model.LoginM;
 import java.io.*;
-import javax.swing.JOptionPane;
+
 
 public class LoginC {
   
@@ -62,8 +62,8 @@ public class LoginC {
         }
         
         catch(IOException ex){
-            JOptionPane.showMessageDialog(null, "An IOException Occured");
-            }
+           }
+        
         }
     
     public boolean getMatchM(){

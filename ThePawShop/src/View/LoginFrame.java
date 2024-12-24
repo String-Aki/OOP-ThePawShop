@@ -7,6 +7,7 @@ package View;
 
 
 import Controller.*;
+import javax.swing.JOptionPane;
 
 
 
@@ -849,6 +850,11 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_MgCashierActionPerformed
 
     private void SearchCicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchCicoMouseClicked
+
+        if(MgCSearch.getText().isEmpty()){
+        JOptionPane.showMessageDialog(rootPane, "Search Field is empty!");
+        }
+        
         String Search = MgCSearch.getText();
         
         SC.SearchCashierIDOrName(Search, TCashier);
@@ -865,9 +871,15 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_PAddActionPerformed
 
     private void SearchPicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchPicoMouseClicked
-      String Search = MgPSearch.getText();
       
+        if(MgPSearch.getText().isEmpty()){
+        JOptionPane.showMessageDialog(rootPane, "Search Field is empty!");
+        }
+        
+      String Search = MgPSearch.getText();
       SP.SearchProductIDOrCategory(Search, TProduct);
+      
+      
         
     }//GEN-LAST:event_SearchPicoMouseClicked
 
@@ -894,6 +906,12 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_CsPAddActionPerformed
 
     private void CsSearchPicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CsSearchPicoMouseClicked
+
+
+        if(CsPSearch.getText().isEmpty()){
+        JOptionPane.showMessageDialog(rootPane, "Search Field is empty!");
+        }
+        
         String Result = CsPSearch.getText();
         
         SP.SearchProductIDOrCategory(Result, CsTProduct);

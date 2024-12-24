@@ -35,20 +35,18 @@ public class SearchC {
         String V1 = CData[0].trim();
         String V2 = CData[1].trim();
         String V3 = CData[2].trim();
-        String V4 = CData[3].trim();
-        String V5 = CData[4].trim();
-        String V6 = CData[5].trim();
+       
+        
         
         if(Srch1.getValue1().contains(V1)){
         
         TModel.addRow(CData);
-        
-        
         }
         
         else if(Srch1.getValue1().equals(V3)){
         TModel.addRow(CData);
         }
+        
         
         }
         
