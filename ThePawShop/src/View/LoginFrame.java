@@ -803,6 +803,7 @@ public class LoginFrame extends javax.swing.JFrame {
        
        UsernameField.setText("");
        PassField.setText("");
+       RoleSel.setSelectedIndex(0);
        
     }//GEN-LAST:event_BLoginActionPerformed
 
