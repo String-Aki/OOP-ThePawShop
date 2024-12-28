@@ -1,29 +1,10 @@
 
 package Controller;
 
-import Model.RegisterM;
-import View.ManagerReg;
-import javax.swing.JOptionPane;
 
-public class RegisterC {
-    public RegisterM model;
-    public ManagerReg view;
-    
-    public RegisterC (){
-        model = new RegisterM();
-        view = new ManagerReg();
-    }
-    
-    public void Register(String Username,String Password,String fname,String NIC ){
-    
-    model.setRegisterM(Username, Password, fname, NIC);
-    model.writeCred();
-      
-    }
-    }
-    
-  
-    
-    
+public abstract class RegisterC {
+   
+    public abstract void Register(String Data1, String Data2, String Data3, String Data4, String Data5, String Data6);
     
 
+}
