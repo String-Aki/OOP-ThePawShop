@@ -1,13 +1,94 @@
-# OOP-ThePawShop
-“The Paws Shop” is one of the new pets supply all kinds of needs for the four-legged companion. 
-Pet owners can purchase a variety of products such as pet toys, harnesses, cages, grooming products, collars, food, and more. They are planning to automate the transaction process to keep up with the high demand. The system has two different user levels cashier and Manager. 
-Functionalities of the user levels are as follows 
-Cashier
-1.	View all the pet supplies details 
-2.	Add new pet supplies details and category of the pet supplies
-3.	Search pet supplies details based on category (pet toys, harnesses, cages, grooming products, collars and etc)
+# The Paw Shop - Inventory Management System
 
-Manager: (can perform all the functionality as cashier plus the following)
-1.	Create new user account for cashier
+An inventory management system for a pet supply store, developed using **Java** and **Swing** as part of my first-year university assignment.  
+The system focuses on showcasing robust **Object-Oriented Programming (OOP)** concepts such as **inheritance**, **encapsulation**, **abstraction**, and **polymorphism** through a fully functional desktop application.
 
-You are required to apply OOP concepts for the above scenario. Data need to be saved and retrieved from a File
+---
+
+## Project Overview
+
+The Paw Shop Inventory System provides two distinct user roles:
+
+- **Manager**: Full access to manage products and cashier accounts.
+- **Cashier**: Limited access to manage product entries.
+
+The system allows for:
+
+- Secure login based on role.
+- Product management (add, view, search).
+- Cashier account management (register, view, search).
+- Data persistence via text files.
+
+---
+
+## Tech Stack
+
+- **Language**: Java
+- **GUI Framework**: Java Swing
+- **Architecture**: MVC (Model-View-Controller)
+- **Storage**: Local text files (`Product.txt`, `CashierCreds.txt`)
+
+---
+
+## User Interface Preview
+
+### Authentication Interface
+
+![Authentication Interface](screenshots/UI.png)
+
+### Manager Dashboard
+
+![Manager Dashboard](screenshots/manager_dashboard.png)
+
+### Cashier Dashboard
+
+![Cashier Dashboard](screenshots/cashier_dashboard.png)
+
+---
+
+## Core Features
+
+- **Role-based Login System** (Manager & Cashier)
+- **Product Management**
+  - Add new products
+  - View all products
+  - Search products by ID or category
+- **Cashier Management** (Manager only)
+  - Register new cashier accounts
+  - View all registered cashiers
+  - Search cashiers by ID or name
+- **Persistent Storage**
+  - Product and cashier data are stored locally using text files
+- **Secure Logout** functionality for both roles
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Java Development Kit (JDK) installed
+- Java IDE (Apache NetBeans)
+
+### Running the Application
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/the-paw-shop.git
+   ```
+2. Navigate to the `ThePawShop/dist/` directory inside the project.
+3. Run the application by either:
+
+- **Double-clicking** on `ThePawShop.jar`
+- **OR** using the terminal/command prompt:
+  ```bash
+  java -jar ThePawShop/dist/ThePawShop.jar
+  ```
+
+---
+
+### Default Login Credentials
+
+- **Manager Username**: `SuperAdmin`
+- **Manager Password**: `Admin`
+- _(Cashier accounts must first be created by the Manager through the application.)_
